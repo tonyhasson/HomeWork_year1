@@ -4,12 +4,22 @@
 
 Complex::Complex(double x, double y) :a(x), b(y)
 {
+	if (abs(y) < 0.00000001)
+	{
+		b = 0;
+	}
+	if (abs(x) < 0.00000001)
+	{
+		a = 0;
+	}
 }
+
 Complex::Complex(const Complex& c)
 {
 	a = c.a;
 	b = c.b;
 }
+
 Complex::~Complex()
 {
 }
