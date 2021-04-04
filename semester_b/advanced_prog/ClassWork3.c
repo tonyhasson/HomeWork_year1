@@ -52,7 +52,7 @@ void print_matrix(int row, int col, int** mat)
 		printf("\n");
 	}
 }
-void delete_matrix(int row, int col, int*** mat)
+void delete_matrix(int row, int*** mat)
 {
 	int i, j;
 	for (i = 0; i < row; i++)
