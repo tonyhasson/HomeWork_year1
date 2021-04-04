@@ -15,17 +15,6 @@ typedef struct
 }Node;
 
 
-int Is_empty(Node* head)
-{
-	if (head->n == NULL)
-	{
-		return(1);
-	}
-	else
-	{
-		return(0);
-	}
-}
 Node* opos_list(Node* head)
 {
 	Node* previous = NULL;
