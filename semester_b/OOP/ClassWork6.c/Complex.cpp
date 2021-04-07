@@ -205,4 +205,14 @@ Complex Complex::operator^(const int& num)const
 	}
 	return(ret);
 }
+Complex Complex::operator*(const double& d)const//made for matrix complex
+{
+	Complex temp(d);
+	return(*this * temp);
+}
 
+Complex operator*(const double& d, const Complex& m)//made for matrix complex
+{
+	Complex temp = m * d;
+	return temp;
+}
