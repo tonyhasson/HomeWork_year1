@@ -8,6 +8,7 @@ class Complex
 {
 	friend ostream& operator<<(ostream&, const Complex&);
 	friend istream& operator>>(istream&, Complex&);
+	friend Complex operator*(const double& d, const Complex& m);//made for matrix complex
 
 public:
 	Complex(double x=0,double y=0);
@@ -31,6 +32,8 @@ public:
 	Complex operator/(Complex&)const;
 	Complex operator/(const double&)const;
 	Complex operator^(const int&)const;
+	//operator overload with double
+	Complex operator*(const double&)const;//made for matrix complex
 
 
 
