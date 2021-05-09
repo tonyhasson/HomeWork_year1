@@ -60,13 +60,15 @@ void removeSpaces(char* infile, char* outfile)
     FILE* tmp_og,*tmp_new;
     tmp_og = fopen(infile, "r");
     tmp_new = fopen(outfile, "w");
-    char s[30];
-    fscanf(tmp_og, "%s", s);
+    char c;
+    c = fgetc(tmp_og);
     while (!feof(tmp_og))
     {
-        fprintf(tmp_new, s);
-        fscanf(tmp_og, "%s", s);
+        if(c!=' ')
+        fprintf(tmp_new, "%c",c);
+        c = fgetc(tmp_og);
     }
+
     fclose(tmp_og);
     fclose(tmp_new);
 
@@ -81,12 +83,20 @@ void print_file(char* filename)
     FILE* tmp;
     char c;
     tmp = fopen(filename, "r");
-    fscanf(tmp," %c",&c);
+    c = fgetc(tmp);
     while (!feof(tmp))
     {
-        printf("%c", c);
-        fscanf(tmp," %c", &c);
+        if (c != '\n')
+        {
+            printf("%c", c);
+        }
+        else
+        {
+            printf("\n");
+        }
+        c = fgetc(tmp);
     }
+
 
 
     fclose(tmp);
@@ -134,6 +144,6 @@ void main()
    //question3:
 
     removeSpaces("tst.txt", "tst2.txt");
-    print_file("tst.txt");
+    print_file("tst2.txt");
 }
 
